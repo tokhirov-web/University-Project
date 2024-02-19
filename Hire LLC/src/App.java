@@ -9,13 +9,14 @@ public class App
 
     // Company's Information
     String companyName = "Hire LLC";
-    short establishedYear = 2024;
+    final short establishedYear = 2024;
     byte partnersNum = 4; // Number of Partnering Companies
     byte numOfBranches = 2; // Number of offices
     String branchOneName = "Sirius";
     String branchTwoName = "Avanguard";
     boolean avanguardIsActive = true; // Active - means currently working
     boolean siriusIsActive = false;
+    byte numOfWorkers = 67;
     
 
     // The number of available jobs and potential employees
