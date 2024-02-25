@@ -2,12 +2,7 @@ public class App
 {
     public static void main(String[] args) throws Exception
     {
-        System.out.println("Hello, World!");
-    }
-
-    // Variables declaration
-
-    // Company's Information
+        // Company's Information
     String companyName = "Hire LLC";
     final short establishedYear = 2024;
     byte partnersNum = 4; // Number of Partnering Companies
@@ -19,21 +14,42 @@ public class App
     boolean siriusIsActive = false; // Is being constructed
     boolean mirageIsActive = false; // Under development
     byte numOfWorkers = 67;
-    float revenue = 30405.56f;
+    float revenue = 30400785.56f;
     
-
     // The number of available jobs and potential employees
     byte jobsNum = 5;
     byte jobSeekersNum = 10;
-
+    
     // Employees' data
-
+    
     // Employee one
     String empOneName = "Michael Jefferson";
     String empOneProfession = "Chemical Engineer";
-    byte employeeOneId = 23;
+    byte employeeOneId = 9;
     byte employeeAge = 28;
-    boolean hasDegree = true;
+    final boolean hasDegree = true;
     byte experienceYears = 3;
-    float employeeGpa = 3.4f;
+    final float employeeGpa = 3.4f;
+    
+    // Employer's data
+    
+    // Employer one
+    String companyOneName = "Saneg LLC";
+    final short comanyOneEstYear = 2004; // Company's established year
+    float companyOneRevenue = 3440001.45f;
+    short avgSalary = 3000;
+    final boolean licenesed1 = true;
+    
+
+    System.out.print("Company's information: ");
+    System.out.print("Name: " + companyName);
+    System.out.print("Company's established year: " + establishedYear);
+
+    System.out.println();
+
+    System.out.println("\nDatabase information:");
+    System.out.print("The number of available jobs\t" + jobsNum + "\t");
+    System.out.print("\nThe number of potential candidates that are looking for a job\t" + jobSeekersNum + "\t");
+};
+    
 }
