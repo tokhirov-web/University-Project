@@ -15,6 +15,9 @@ public class App
     boolean mirageIsActive = false; // Under development
     byte numOfWorkers = 67;
     float revenue = 30400785.56f;
+
+    float givenSalary = 0f;
+    
     
     // The number of available jobs and potential employees
     byte jobsNum = 5;
@@ -37,7 +40,7 @@ public class App
     String companyOneName = "Saneg LLC";
     final short comanyOneEstYear = 2004; // Company's established year
     float companyOneRevenue = 3440001.45f;
-    short avgSalary = 3000;
+    short avgSalary1 = 3000;
     final boolean licenesed1 = true;
     
 
@@ -49,7 +52,24 @@ public class App
 
     System.out.println("\nDatabase information:");
     System.out.print("The number of available jobs\t" + jobsNum + "\t");
-    System.out.print("\nThe number of potential candidates that are looking for a job\t" + jobSeekersNum + "\t");
-};
-    
+    System.out.println("\nThe number of potential candidates that are looking for a job\t" + jobSeekersNum + "\t");
+
+    byte mothDay;
+
+    for (mothDay = 0; mothDay <= 30; mothDay++)
+        {
+            if (mothDay == 30)
+            {
+                givenSalary = revenue / numOfWorkers;
+                System.out.println();
+                System.out.println("All workers have recieved their salary");
+                System.out.println("The average salary according to the company's revenue is : " + givenSalary);
+            }
+            else
+            {
+                System.out.println();
+                System.out.println("Day " + mothDay);
+            }
+        }
+    };
 }
