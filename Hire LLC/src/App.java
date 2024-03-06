@@ -15,6 +15,13 @@ public class App
     boolean mirageIsActive = false; // Under development
     byte numOfWorkers = 67;
     float revenue = 30400785.56f;
+    float companyExpenses = 3462.78f;
+    boolean salaryIsGiven;
+
+    // Departments' employees
+    String[] design = {}
+
+
 
     float givenSalary = 0f;
     
@@ -51,24 +58,23 @@ public class App
     System.out.println();
 
     System.out.println("\nDatabase information:");
-    System.out.print("The number of available jobs\t" + jobsNum + "\t");
-    System.out.println("\nThe number of potential candidates that are looking for a job\t" + jobSeekersNum + "\t");
+    System.out.print("The number of available jobs:\t" + jobsNum + "\t");
+    System.out.println("\nThe number of potential candidates that are looking for a job:\t" + jobSeekersNum + "\t");
 
-    byte mothDay;
+    byte monthDay;
 
-    for (mothDay = 0; mothDay <= 30; mothDay++)
+    for (monthDay = 0; monthDay <= 30; monthDay++)
         {
-            if (mothDay == 30)
-            {
-                givenSalary = revenue / numOfWorkers;
-                System.out.println();
-                System.out.println("All workers have recieved their salary");
-                System.out.println("The average salary according to the company's revenue is : " + givenSalary);
+            if (monthDay == 30 || monthDay == 31)
+            {   
+                givenSalary = (revenue - companyExpenses) / numOfWorkers;
+                System.out.println("\nAll workers have recieved their salary\n");
+                System.out.println("The average salary according to the company's revenue is : " + givenSalary + "\n");
+                salaryIsGiven = true;
             }
             else
             {
-                System.out.println();
-                System.out.println("Day " + mothDay);
+                System.out.println("\nDay " + monthDay);
             }
         }
     };
