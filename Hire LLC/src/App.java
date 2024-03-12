@@ -7,8 +7,8 @@ public class App
     final short establishedYear = 2024;
     byte partnersNum = 4; // Number of Partnering Companies
     byte numOfBranches = 3; // Number of offices
-    String branchOneName = "Sirius";
-    String branchTwoName = "Avanguard";
+    String branchOneName = "Nuke";
+    String branchTwoName = "Inferno";
     String branchThreeName = "Mirage";
     boolean avanguardIsActive = true; // Active - means currently working
     boolean siriusIsActive = false; // Is being constructed
@@ -17,9 +17,8 @@ public class App
     float revenue = 30400785.56f;
     float companyExpenses = 3462.78f;
     boolean salaryIsGiven;
+    float expenses = 44552.3f;
 
-    // Departments' employees
-    String[] design = {}
 
 
 
@@ -36,10 +35,10 @@ public class App
     String empOneName = "Michael Jefferson";
     String empOneProfession = "Chemical Engineer";
     byte employeeOneId = 9;
-    byte employeeAge = 28;
-    final boolean hasDegree = true;
-    byte experienceYears = 3;
-    final float employeeGpa = 3.4f;
+    byte employeeOneAge = 28;
+    final boolean hasDegree1 = true;
+    byte experienceYears1 = 3;
+    final float employeeOneGpa = 3.4f;
     
     // Employer's data
     
@@ -49,6 +48,13 @@ public class App
     float companyOneRevenue = 3440001.45f;
     short avgSalary1 = 3000;
     final boolean licenesed1 = true;
+
+    // Employer two
+    String companyTwoName = "Apple Inc.";
+    final short comanyTwoEstYear = 1978; // Company's established year
+    float companyTwoRevenue = 34400045561.45f;
+    short avgSalary2 = 5000;
+    final boolean licenesed2 = true;
     
 
     System.out.print("Company's information: ");
@@ -60,6 +66,9 @@ public class App
     System.out.println("\nDatabase information:");
     System.out.print("The number of available jobs:\t" + jobsNum + "\t");
     System.out.println("\nThe number of potential candidates that are looking for a job:\t" + jobSeekersNum + "\t");
+
+    System.out.println();
+
 
     byte monthDay;
 
@@ -77,5 +86,60 @@ public class App
                 System.out.println("\nDay " + monthDay);
             }
         }
+    
+    System.out.println();
+
+
+    if (revenue > expenses) {
+        System.out.println("The company is profitable");
+    } else if (revenue == expenses) {
+        System.out.println("The company is stable");
+    } else if (revenue < expenses) {
+        System.out.println("The company is losing it's money");
+    }
+
+    System.out.println();
+
+    if (hasDegree1) {
+        System.out.println("The employee has got a degree");
+        System.out.println();
+    }
+
+    if (jobSeekersNum < jobsNum) {
+        System.out.println("No enough employees in the database");
+    } else {
+        System.out.println("The databsase has enough employees");
+    }
+
+    if (employeeOneAge >= 25) {
+        if (employeeOneGpa >= 3f) {
+            System.out.println("The employee one is eligible for consideration");
+        } else {
+            System.out.println("The employee is not eligible for consideration. The reason is low gpa");
+        }
+    } else {
+        System.out.println("The employee is too young to be considered");
+    }
+
+    System.out.println();
+
+    switch (empOneProfession) {
+        case "Chemical Engineer":
+            System.out.println("The employee can work in " + companyOneName);
+
+            break;
+        
+        case "Software Engineer":
+            System.out.println("The employee can work in " + companyTwoName);
+
+            break;
+        default:
+            System.out.println("No available jobs for the employee");
+            
+            break;
+    }
+
+    System.out.println();
+
     };
 }
