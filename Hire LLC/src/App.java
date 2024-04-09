@@ -1,15 +1,73 @@
 public class App
 {
+    
+    // Static block
+    static {
+        short currentYear = 2024;
+        boolean companyIsAlive = true;
+    }
+
+    // Static variables' declaration
+    static final String companyName = "Hire LLC";
+    static final short establishedYear = 2024;
+    static float revenue = 30400785.56f;
+
+
+    // static functions 
+
+    // Function 1
+    static void hasDegree(String employee, boolean degree) {
+        if (degree == true) {
+            System.out.println(employee + " has got a degree");
+        } else {
+            System.out.println(employee + " does not have a degree");
+        }
+    }
+
+    // Function 2
+    static void licenseCheck(String company, boolean license) {
+        if (license == true) {
+            System.out.println(company + " has got a license");
+        } else {
+            System.out.println(company + " does not have a license");
+        }
+    }
+
+
+
+    // Instant function
+    void profitability(String company, float revenue, float expenses) {
+        if (revenue > expenses) {
+            System.out.println(company + " is profitable");
+        } else if (revenue == expenses) {
+            System.out.println(company + " is stable");
+        } else if (revenue < expenses) {
+            System.out.println(company + " is losing it's money");
+        }
+    }
+
+
+
+    // Recursive Function
+    public static int power(int x, int y) {
+        if (y == 0) {
+            return 1;
+        }
+        return x * power(x, y - 1);
+    }
+
+
+
     public static void main(String[] args) throws Exception
     {
 
+        App ap = new App();
+    
     // STEP 2
 
     // Varibles' declaration
 
     // Company's Information
-    String companyName = "Hire LLC";
-    final short establishedYear = 2024;
     byte partnersNum = 4; // Number of Partnering Companies
     byte numOfBranches = 3; // Number of offices
     String branchOneName = "Nuke";
@@ -19,10 +77,9 @@ public class App
     boolean siriusIsActive = false; // Is being constructed
     boolean mirageIsActive = false; // Under development
     byte numOfWorkers = 67;
-    float revenue = 30400785.56f;
+
     float companyExpenses = 3462.78f;
     boolean salaryIsGiven;
-    float expenses = 44552.3f;
 
 
 
@@ -92,10 +149,10 @@ public class App
 
 
     // Print statements
-
-    System.out.print("Company's information: ");
-    System.out.print("Name: " + companyName);
-    System.out.print("Company's established year: " + establishedYear);
+    System.out.println();
+    System.out.println("Company's information: ");
+    System.out.println("Name: " + companyName);
+    System.out.println("Company's established year: " + establishedYear);
 
     System.out.println();
 
@@ -120,23 +177,23 @@ public class App
         System.out.println();
     }
 
-    // if-else if-else blocks
+    // if-else block
     if (jobSeekersNum < jobsNum) {
         System.out.println("No enough employees in the database");
     } else {
         System.out.println("The databsase has enough employees");
     }
-
-
+    
+    
     System.out.println();
-
-    // if-else block
-
-    if (revenue > expenses) {
+    
+    
+    // if-else if-else blocks
+    if (revenue > companyExpenses) {
         System.out.println("The company is profitable");
-    } else if (revenue == expenses) {
+    } else if (revenue == companyExpenses) {
         System.out.println("The company is stable");
-    } else if (revenue < expenses) {
+    } else if (revenue < companyExpenses) {
         System.out.println("The company is losing it's money");
     }
     
@@ -231,9 +288,9 @@ public class App
                 continue;
             }
         else {
-            System.out.println(potentialComps[i] + ". Match");
-            break;
-        }
+                System.out.println(potentialComps[i] + ". Match");
+                break;
+            }
         }
     };
 }
