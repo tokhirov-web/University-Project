@@ -21,8 +21,8 @@ public class GUI extends Frame {
 
         button.setBounds(490, 100, 150, 30);
 
-        field1.setBounds(470, 70, 200, 30);
-        field2.setBounds(800, 70, 350, 150);
+        field1.setBounds(380, 70, 400, 30);
+        field2.setBounds(1000, 70, 350, 700);
 
 
 
@@ -68,7 +68,7 @@ class Perform implements ActionListener {
             System.out.println(userInput);
         }
 
-        if (userInput == "1") {
+        if (userInput == "2") {
 
         }
 
