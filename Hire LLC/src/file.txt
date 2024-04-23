@@ -1,21 +1,16 @@
-public class App
+public class HiringCompany
 {
-    
-    // Static block
+
     static {
         short currentYear = 2024;
         boolean companyIsAlive = true;
     }
 
-    // Static variables' declaration
     static final String companyName = "Hire LLC";
     static final short establishedYear = 2024;
     static float revenue = 30400785.56f;
 
 
-    // static functions 
-
-    // Function 1
     static void hasDegree(String employee, boolean degree) {
         if (degree == true) {
             System.out.println(employee + " has got a degree");
@@ -24,7 +19,6 @@ public class App
         }
     }
 
-    // Function 2
     static void licenseCheck(String company, boolean license) {
         if (license == true) {
             System.out.println(company + " has got a license");
@@ -33,9 +27,20 @@ public class App
         }
     }
 
+    public static void empEvaluation(int age, float gpa) {
+        if (gpa >= 3f) {
+            if (age >= 23) {
+                System.out.println("The employee is eligible for consideration");
+            } else {
+                System.out.println("The employee is not eligible for consideration. Too young");
+            }
+        } else {
+            System.out.println("The employee is not eligible for consideration. Low GPA");
+        }
+    }
 
 
-    // Instant function
+
     void profitability(String company, float revenue, float expenses) {
         if (revenue > expenses) {
             System.out.println(company + " is profitable");
@@ -46,14 +51,28 @@ public class App
         }
     }
 
+    public static int jobListing(String[] arr, int length) {
 
-
-    // Recursive Function
-    public static int power(int x, int y) {
-        if (y == 0) {
-            return 1;
+        if (length == 0) {
+            return 0;
         }
-        return x * power(x, y - 1);
+
+        System.out.println(arr[length - 1]);
+
+        return jobListing(arr, length - 1);
+    }
+
+
+    public static void addEmpToDB(String name, String[] arr, int freeSpace) {
+        arr[freeSpace] = name;
+        System.out.println("The name was added");
+        System.out.println("Current list of potential employees:");
+        for(String n: arr) {
+            if (n == null) {
+                continue;
+            }
+            System.out.println(n);
+        }
     }
 
 
@@ -61,39 +80,39 @@ public class App
     public static void main(String[] args) throws Exception
     {
 
-        App ap = new App();
-    
-    // STEP 2
+    HiringCompany ap = new HiringCompany();
 
-    // Varibles' declaration
-
-    // Company's Information
-    byte partnersNum = 4; // Number of Partnering Companies
-    byte numOfBranches = 3; // Number of offices
+    byte partnersNum = 4;
+    byte numOfBranches = 3;
     String branchOneName = "Nuke";
     String branchTwoName = "Inferno";
     String branchThreeName = "Mirage";
-    boolean avanguardIsActive = true; // Active - means currently working
-    boolean siriusIsActive = false; // Is being constructed
-    boolean mirageIsActive = false; // Under development
+    boolean avanguardIsActive = true;
+    boolean siriusIsActive = false;
+    boolean mirageIsActive = false;
     byte numOfWorkers = 67;
 
     float companyExpenses = 3462.78f;
-    boolean salaryIsGiven;
-
-
+    boolean salaryIsGiven = false;
 
 
     float givenSalary = 0f;
-    
-    
-    // The number of available jobs and potential employees
+
+
     byte jobsNum = 5;
-    byte jobSeekersNum = 10;
-    
-    // Employees' data
-    
-    // Employee one
+    byte jobSeekersNum = 3;
+
+    String[] jobSeekersDataBase = new String[8];
+    jobSeekersDataBase[0] = "Antony Joshua";
+    jobSeekersDataBase[1] = "Tiffany Jons";
+    jobSeekersDataBase[2] = "Melonie Katelin";
+
+    addEmpToDB("Name", jobSeekersDataBase, 3);
+
+
+
+
+
     String empOneName = "Michael Jefferson";
     String empOneProfession = "Electrical Engineer";
     byte employeeOneId = 9;
@@ -101,15 +120,12 @@ public class App
     final boolean hasDegree1 = true;
     byte experienceYears1 = 3;
     final float employeeOneGpa = 3.4f;
-    byte contractDaysLeft1 = 31; // The number of the days in which the employee's contract is valid in our company
+    byte contractDaysLeft1 = 31;
 
 
-    
-    // Employers' data
-    
-    // Employer one
+
     String companyOneName = "Saneg LLC";
-    final short comanyOneEstYear = 2004; // Company's established year
+    final short companyOneEstYear = 2004;
     float companyOneRevenue = 3440001.45f;
     short avgSalary1 = 3000;
     final boolean licenesed1 = true;
@@ -118,7 +134,7 @@ public class App
 
     // Employer two
     String companyTwoName = "Apple Inc.";
-    final short comanyTwoEstYear = 1978; // Company's established year
+    final short companyTwoEstYear = 1978;
     float companyTwoRevenue = 34400045561.45f;
     short avgSalary2 = 5000;
     final boolean licenesed2 = true;
@@ -126,7 +142,7 @@ public class App
 
     // Employer three
     String companyThreeName = "Google Inc.";
-    final short comanyThreeEstYear = 1998; // Company's established year
+    final short companyThreeEstYear = 1998;
     float companyThreeRevenue = 3440456561.45f;
     short avgSalary3 = 4000;
     final boolean licenesed3 = true;
@@ -134,21 +150,46 @@ public class App
 
     // Employer four
     String companyFourName = "FaceBook Inc.";
-    final short comanyFourEstYear = 2005; // Company's established year
+    final short companyFourEstYear = 2005;
     float companyFourRevenue = 343234561.45f;
+    float companyFourExpenses = 34234252.454f;
     short avgSalary4 = 3000;
     final boolean licenesed4 = true;
     String industry4 = "IT";
 
 
-    // Potential employeers
-    String[] potentialComps = {"Google", "FaceBook", "Eriell","Wallmart", "Pearson"}; // Companies that want to sign a contract with Hire LLC company
-    
-    // Potential jobseekers
+    String[] potentialComps = {"Google", "FaceBook", "Eriell","Wallmart", "Pearson"};
+
     String[] potentialJobSeekers = {"Andrew Tate", "Joana Richardson", "Mandy Alerton"};
 
+    String[] jobsDatabase = {"Software Developer", "Electrical Engineer", "Petrolium Engineer", "HR manager",
+            "Project Manager"};
 
-    // Print statements
+    String[][] companyInfo = new String[20][2];
+    companyInfo[0][0] = companyOneName;
+    companyInfo[0][1] = industry1;
+
+    companyInfo[1][0] = companyTwoName;
+    companyInfo[1][1] = industry2;
+
+    companyInfo[2][0] = companyThreeName;
+    companyInfo[2][1] = industry3;
+
+    companyInfo[3][0] = companyFourName;
+    companyInfo[3][1] = industry4;
+
+
+
+
+    System.out.println("\nThe list of the jobs in the database: \n");
+    System.out.println(jobListing(jobsDatabase, jobsDatabase.length) + "\n");
+
+    ap.profitability(companyFourName, companyFourRevenue, companyFourExpenses);
+
+    licenseCheck(companyFourName, licenesed4);
+
+
+
     System.out.println();
     System.out.println("Company's information: ");
     System.out.println("Name: " + companyName);
@@ -156,90 +197,58 @@ public class App
 
     System.out.println();
 
-    System.out.println("\nDatabase information:");
-    System.out.print("The number of available jobs:\t" + jobsNum + "\t");
-    System.out.println("\nThe number of potential candidates that are looking for a job:\t" + jobSeekersNum + "\t");
+    System.out.println("\nThe number of potential candidates that are willing to sign contract with us :\t" + jobSeekersNum + "\t");
 
     System.out.println();
 
 
-    byte monthDay; // Current day of the month
+    byte monthDay = 0;
 
-    
+
     System.out.println();
-    
-    // STEP 3
 
-    // Single if block
-
-    if (hasDegree1) {
-        System.out.println("The employee has got a degree");
-        System.out.println();
+    if (potentialJobSeekers.length > 10) {
+        System.out.println("Too many potential candidates");
     }
 
-    // if-else block
     if (jobSeekersNum < jobsNum) {
         System.out.println("No enough employees in the database");
     } else {
         System.out.println("The databsase has enough employees");
     }
-    
-    
+
+
     System.out.println();
-    
-    
-    // if-else if-else blocks
-    if (revenue > companyExpenses) {
-        System.out.println("The company is profitable");
-    } else if (revenue == companyExpenses) {
-        System.out.println("The company is stable");
-    } else if (revenue < companyExpenses) {
-        System.out.println("The company is losing it's money");
-    }
-    
-    
-    // Nested if-else block
-    
-    if (employeeOneAge >= 25) {
-        if (employeeOneGpa >= 3f) {
-            System.out.println("The employee one is eligible for consideration");
-        } else {
-            System.out.println("The employee is not eligible for consideration. The reason is low gpa");
-        }
-    } else {
-        System.out.println("The employee is too young to be considered");
-    }
-    
+
+    hasDegree(empOneName, hasDegree1);
+
+    empEvaluation(employeeOneAge, employeeOneGpa);
+
     System.out.println();
-    
-    // Switch block
+
 
     switch (empOneProfession) {
         case "Electrical Engineer":
         System.out.println("The employee can work in " + companyOneName);
-        
+
         break;
-        
+
         case "Software Engineer":
         System.out.println("The employee can work in " + companyTwoName);
-        
+
         break;
         default:
         System.out.println("No available jobs for the employee");
-        
+
         break;
     }
-    
+
     System.out.println();
 
-    // STEP 4
-
-    // for loop
-    
     for (monthDay = 0; monthDay <= 30; monthDay++)
         {
             if (monthDay == 30 || monthDay == 31)
-            {   
+            {
                 givenSalary = (revenue - companyExpenses) / numOfWorkers;
                 System.out.println("\nAll workers have recieved their salary\n");
                 System.out.println("The average salary according to the company's revenue is : " + givenSalary + "\n");
@@ -250,20 +259,15 @@ public class App
                 System.out.println("\nDay " + monthDay);
             }
         }
-    
+
     System.out.println();
 
-
-    // while loop
 
     while (contractDaysLeft1 > 0) {
         System.out.println(empOneName + " has " + contractDaysLeft1 + " days of the contract left");
         System.out.println();
         contractDaysLeft1--;
     }
-
-
-    // do-while loop
 
     byte counterForPotentialComps = 0;
 
@@ -273,15 +277,11 @@ public class App
         System.out.print(potentialComps[counterForPotentialComps] + " ");
         counterForPotentialComps++;
     } while (counterForPotentialComps < potentialComps.length);
-    
+
     System.out.println();
     System.out.println();
 
-    // break and continue
 
-    /*
-     * the loop that is searching for eriell company
-     */
     for(int i = 0; i <= potentialComps.length; i++) {
         if (potentialComps[i] != "Eriell") {
                 System.out.println("No match");
