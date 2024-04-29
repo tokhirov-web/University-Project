@@ -185,9 +185,10 @@ public class HiringCompany
         jobSeekersDataBase[1] = "Tiffany Jons";
         jobSeekersDataBase[2] = "Melonie Katelin";
 
-        String[] potentialComps = {"Google", "FaceBook", "Eriell","Wallmart", "Pearson"};
+        String[] potentialComps = {"Google", "FaceBook", "Eriell", "Wallmart", "Pearson"};
 
-        String[] potentialJobSeekers = {"Andrew Tate", "Joana Richardson", "Mandy Alerton"};
+        String[] potentialJobSeekers = {"Andrew Tate", "Joana Richardson", "Mandy Alerton", "Name4", "Name5", "Name6"
+                , "Name7"};
 
         String[] jobsDatabase = {"Software Developer", "Electrical Engineer", "Petrolium Engineer", "HR manager",
                 "Project Manager"};
@@ -247,7 +248,7 @@ public class HiringCompany
 
         System.out.println();
 
-        if (potentialJobSeekers.length > 10) {
+        if (potentialJobSeekers.length > 2) {
             System.out.println("Too many potential candidates");
         }
 
