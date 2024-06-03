@@ -67,7 +67,14 @@ class Perform implements ActionListener {
 
         if (e.getSource() == gObj.button) {
             userInput = gObj.field1.getText();
-            int num = Integer.parseInt(userInput);
+            int num = 0;
+            try {
+                num = Integer.parseInt(userInput);
+            }
+            catch (NumberFormatException q) {
+                gObj.theList.removeAll();
+                gObj.theList.add("Enter the numbers only");
+            }
 
             if(num == 2) {
 
@@ -285,8 +292,14 @@ class Perform implements ActionListener {
                 gObj.theList.add("  {potentialComps[3]}");
                 gObj.theList.add("}");
             }
+            else {
+                gObj.theList.removeAll();
+
+                gObj.theList.add("No such step");
 
 
+            }
+            
         }
     }
 }
